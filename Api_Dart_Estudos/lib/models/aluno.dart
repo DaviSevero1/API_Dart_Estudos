@@ -45,8 +45,9 @@ class Aluno {
     return Aluno(
       id: map['id'] ?? 0,
       nome: map['nome'] ?? '',
+      idade: map['idade'],
       nomeCursos: List<String>.from(map['nomeCursos']),
-      endereco: Endereco.fromMap(map['enedereco']),
+      endereco: Endereco.fromMap(map['endereco'] ?? <String, dynamic>{}),
       cursos: map['cursos'] 
               ?.map<Curso>((cursoMap) => Curso.fromMap(cursoMap))
               .toList() ??
